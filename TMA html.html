@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en"> 
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Customer Support</title> 
+  <link rel="stylesheet" href="style.css"> 
+ <style type="text/css" id="dcoder_stylesheet">body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: White;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="file"] {
+    margin-top: 5px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.response-message {
+    margin-top: 20px;
+    text-align: center;
+}</style></head> 
+ <body> 
+  <div class="container"> 
+   <h1>Dannicus Pictures</h1> 
+   <p>ፎቷቹን ከታች ባለው Choice your file በሚለው ቦታ ላይ አስቀምጡልን በነፃ እንዲሁም በጥራት እንሰራላችኋለን:</p> 
+   <form id="supportForm" enctype="multipart/form-data"> <label for="message">Message:</label> <textarea id="message" rows="4" required></textarea> <label for="photo">Upload Photo:</label> 
+    <input type="file" id="photo" accept="image/*" required> <button type="submit">Submit</button> 
+   </form> 
+   <div id="responseMessage" class="response-message"></div> 
+  </div> 
+  <script src="script.js"></script> 
+ 
+<script type="text/javascript" id="dcoder_script">document.getElementById('supportForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting the traditional way
+
+    // Get form values
+    const message = document.getElementById('message').value;
+    const photo = document.getElementById('photo').files[0];
+
+    // Here you would typically send the data to a server using fetch or XMLHttpRequest.
+    // For this example, we'll just simulate a successful submission.
+    
+    // Simulate a response
+    setTimeout(() => {
+        document.getElementById('responseMessage').innerText = 
+            Thank you! Your message has been received. Photo name: ${photo.name};
+        
+        // Clear the form
+        document.getElementById('supportForm').reset();
+    }, 1000);
+});</script></body></html>
